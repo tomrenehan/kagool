@@ -1,0 +1,32 @@
+﻿@model IEnumerable<KagoolTest.Models.Beer> 
+@{
+    ViewData["Title"] = "Filter";
+}
+
+<h1>Filter by ABV</h1>
+<form asp-action="Filter" asp-controller="Home" method="get">    
+    <p>Order by:</p>
+    <select name="order" id="order" onchange="this.form.submit()">
+        @if (Context.Request.Query["order"] == "desc")
+        {
+            <option value="asc">Asc</option>
+            <option value="desc" selected>Desc</option>
+        }
+        else
+        {
+            <option value="asc">Asc</option>
+            <option value="desc">Desc</option>
+        }
+    </select>
+</form>
+
+<div class="row">
+    @foreach (var beer in Model)
+    {
+        <div class="col-sm-3 bct">
+            <img src="@beer.Image_Url" alt="@beer.Name" />
+            <h5>@beer.Name</h5>
+            <p>@beer.ABV</p>
+        </div>
+    }
+</div>

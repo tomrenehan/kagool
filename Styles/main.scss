@@ -1,0 +1,148 @@
+﻿body {
+    background-color: #fff;
+}
+
+
+.navbar {
+    margin-bottom: 0 !important;
+    background-color: #000 !important;
+    color: #fff !important;
+
+    a {
+        color: #fff !important;
+        text-decoration: none !important;
+
+        &:hover {
+            text-decoration: underline !important;
+        }
+    }
+}
+
+
+// Accordion
+.accBtn {
+    padding: 10px;
+    background-color: #eee;
+    color: #444;
+    width: 100%;
+    border: none;
+    text-align: left;
+    transition: 0.5s;
+}
+
+.active, .accBtn:hover {
+    background-color: #bbb;
+}
+
+
+.accContent {
+    background-color: #f7f7f7;
+    overflow: hidden;
+    height: 0;
+    transition: height 0.2s;    
+}
+
+.open {
+    height: 250px;
+    transition: height 0.5s;
+    background-color: #f7f7f7;
+}
+
+.accCont{
+    margin-bottom:40px;
+}
+
+.containerInner {
+    padding: 20px !important;
+
+    img{
+        height:150px;
+        width:auto;
+    }
+}
+
+
+// Tiny Slider
+.my-slider, .my-slider2 {
+    padding: 0 !important;
+}
+
+.my-slider {
+    .card {
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1);
+        transition: 0.3s;
+        width: 300px;
+
+        img {
+            height: 200px;
+            margin-bottom: 20px;
+        }
+
+        &:hover {
+            box-shadow: 0 8px 14px 0 rgba(0, 0, 0, 0.1);
+        }
+
+        h5 {
+            font-size: 1em;
+        }
+    }
+}
+
+.my-slider2{
+    margin-bottom:50px;
+    
+    .card{
+        border:0 !important;
+    }
+}
+
+
+.container {
+    padding: 2px 16px;
+}
+
+
+.tns-item {
+    text-align: center;
+    background: #f9f9f9;
+    padding: 30px 30px 0 30px;
+    position: relative;
+    border-radius: 0 !important;
+    cursor: pointer;
+    display: inline-block;
+}
+
+
+.my-slider2 {
+    img {
+        height: 500px;
+    }
+
+    .tns-item {
+        padding: 0;
+    }
+}
+
+.tns-controls {
+    text-align: center;
+    margin-top: 30px;
+
+    button {
+        background-color: #ddd !important;
+        color: #000 !important;
+        margin-right: 10px;
+        padding: 10px 20px;
+    }
+}
+
+
+
+.bct {
+    margin-bottom: 20px;
+    text-align:center; 
+
+    img{
+        height:150px;
+        width:auto;
+    }
+}

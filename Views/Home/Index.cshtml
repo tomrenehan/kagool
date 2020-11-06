@@ -1,0 +1,151 @@
+﻿@model IEnumerable<KagoolTest.Models.Beer>
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.2/min/tiny-slider.js"></script>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.2/tiny-slider.css" rel="stylesheet" />
+
+@if (Model != null)
+{
+    int c = 0;
+
+    // Tiny-slider banner
+    <div class="my-slider2" style="padding:0">
+        @for (c = 0; c < 4; c++)
+        {
+            Random rnd = new Random();
+            int rand = rnd.Next(52);
+
+            <div class="card">
+                <img src="https://placeimg.com/2500/500/any?id=@rand">
+            </div>
+        }
+    </div>
+
+    // CTA
+    <div class="row">
+        @foreach (var beer in Model)
+        {
+            <div class="col-sm-3 bct">
+                <img src="@beer.Image_Url" alt="@beer.Name" />
+                <h5>@beer.Name</h5>
+                <p>@beer.ABV</p>
+            </div>
+        }
+    </div>
+
+    // Accordion
+    <div class="container accCont">
+        @{
+            int i = 1;
+
+            foreach (var beer in Model)
+            {
+                <button class="accBtn" onclick="showContent(@i)">@beer.Name</button>
+                <div class="accContent" id="accContent_@i">
+                    <div class="container containerInner">
+                        <div class="row">
+                            <div class="col-sm-2">
+                                <img src="@beer.Image_Url" alt="@beer.Name" />
+                            </div>
+
+                            <div class="col-sm-10">
+                                <p>@beer.Description</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                i++;
+            }
+        }
+    </div>
+
+    <script>
+        // Add event listener to each accordion button
+        $(function () {
+            var acc = document.getElementsByClassName("accBtn");
+            for (i = 0; i < acc.length; i++) {
+                acc[i].addEventListener("click", function () {
+                    this.classList.toggle("active");
+                });
+            }
+        });
+
+        // Show/hide accordion content
+        function showContent(id) {
+            $("#accContent_" + id).toggleClass("open");
+        }
+    </script>
+
+
+    // Second tiny-slider
+    <div class="my-slider" style="padding:0">
+        @foreach (var item in Model)
+        {
+            <div class="card">
+                <img src="@item.Image_Url" alt="@item.Name">
+                <div class="container">
+                    <h5>@item.Name</h5>
+                    <p>ABV: @item.ABV</p>
+                </div>
+            </div>
+        }
+    </div>
+}
+
+
+<script>
+    var slider = tns({
+        container: '.my-slider',
+        items: 8,
+        controlsPosition: 'bottom',
+        speed: 400,
+        nav: false,
+        responsive: {
+            1: {
+                gutter: 20,
+                items: 1,
+                mouseDrag: true
+            },
+            700: {
+                gutter: 30,
+                items: 2,
+                mouseDrag: true
+            },
+            900: {
+                items: 4,
+                mouseDrag: true
+            }
+        }
+    });
+
+    var slider2 = tns({
+        container: '.my-slider2',
+        items: 1,
+        controlsPosition: 'bottom',
+        speed: 400,
+        autoplay: true,
+        autoplayButtonOutput: false,
+        nav: false,
+        controls: false,
+        responsive: {
+            1: {
+                gutter: 0,
+                items: 1,
+                mouseDrag: false
+            },
+            700: {
+                gutter: 0,
+                items: 1,
+                mouseDrag: false
+            },
+            900: {
+                items: 1,
+                mouseDrag: false
+            }
+        }
+    });
+</script>

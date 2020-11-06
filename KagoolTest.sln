@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29911.84
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KagoolTest", "KagoolTest.csproj", "{FDB1C9A1-F49D-47D7-AB26-D0D33FCCC9DB}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FDB1C9A1-F49D-47D7-AB26-D0D33FCCC9DB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FDB1C9A1-F49D-47D7-AB26-D0D33FCCC9DB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FDB1C9A1-F49D-47D7-AB26-D0D33FCCC9DB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FDB1C9A1-F49D-47D7-AB26-D0D33FCCC9DB}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {EBE68DC5-B941-4949-80DB-7D3EF3E1FF72}
+	EndGlobalSection
+EndGlobal
