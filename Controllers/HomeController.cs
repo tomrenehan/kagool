@@ -61,7 +61,7 @@ namespace KagoolTest.Controllers
             else if (!string.IsNullOrEmpty(order) && order == "desc")
             {
                 model = model.OrderByDescending(x => x.ABV).ToList();
-                ViewBag.selected = "asc";
+                ViewBag.selected = "desc";
             }
 
             return View(model);
